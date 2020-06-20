@@ -3,7 +3,7 @@
 char map1[32][128] = 
 {
 		"###############################################################################################################################",
-	        "#                                                                                                                             #",
+	    "#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
@@ -77,15 +77,19 @@ void gameCheckInput(struct Game* game)
 		switch(ch)
 		{
 			case 'w':
+				if(game->snake->snakeDirection != Down)
 				game->snake->snakeDirection = Up;
 				break;
 			case 's':
+				if(game->snake->snakeDirection != Up)
 				game->snake->snakeDirection = Down;
 				break;
 			case 'a':
+				if(game->snake->snakeDirection != Right)
 				game->snake->snakeDirection = Left;
 				break;
 			case 'd':
+				if(game->snake->snakeDirection != Left)
 				game->snake->snakeDirection = Right;
 				break;
 			case 'g':
@@ -112,7 +116,7 @@ void gameDraw(struct Game* game)
 
 void gameMainGameLoop(struct Game* game)
 {
-        gameCheckInput(game);
+    gameCheckInput(game);
 	gameUpdateGame(game);
 	gameDraw(game);
 }

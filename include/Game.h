@@ -14,7 +14,7 @@ struct Game
 {
 	char mapBuffer[32][128];
 	int score;
-	int gameOver;
+    int gameOver;
 	struct Snake* snake;
 };
 
