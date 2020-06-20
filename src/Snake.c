@@ -6,19 +6,19 @@ void snakeInit(struct Snake* snake)
 	snake->snakeDirection = Right;
 	snake->bodyXPos[0] = 63;
 	snake->bodyYPos[0] = 15;
-    snake->bodyXPos[1] = 62;
+    	snake->bodyXPos[1] = 62;
 	snake->bodyYPos[1] = 15;
-    snake->bodyXPos[2] = 61;
+    	snake->bodyXPos[2] = 61;
 	snake->bodyYPos[2] = 15;
-    snake->bodyXPos[3] = 60;
+    	snake->bodyXPos[3] = 60;
 	snake->bodyYPos[3] = 15;
-    snake->bodyXPos[4] = 59;
+    	snake->bodyXPos[4] = 59;
 	snake->bodyYPos[4] = 15;
-    snake->bodyXPos[5] = 58;
+    	snake->bodyXPos[5] = 58;
 	snake->bodyYPos[5] = 15;
-    snake->bodyXPos[6] = 57;
+    	snake->bodyXPos[6] = 57;
 	snake->bodyYPos[6] = 15;
-    snake->bodyXPos[7] = 56;
+    	snake->bodyXPos[7] = 56;
 	snake->bodyYPos[7] = 15;
 }
 
