@@ -74,7 +74,7 @@ void gameRenderBuffer(struct Game* game)
 			printf("#");
 		}
 		printf("\n");
-		printf(" ");
+		printf(" ");  
 	}
 	printf("\n\n Score: %i", game->score);
 }
