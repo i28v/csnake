@@ -12,8 +12,8 @@ struct Snake
 {
 	enum Direction snakeDirection;
 	int snakeLength;
-	int bodyXPos[256];
-	int bodyYPos[256];
+	int bodyXPos[3625];
+	int bodyYPos[3625];
 };
 
 void snakeInit(struct Snake* snake );

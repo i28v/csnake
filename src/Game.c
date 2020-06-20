@@ -3,7 +3,7 @@
 char map1[32][128] = 
 {
 		"###############################################################################################################################",
-	        "#                                                                                                                             #",
+	    "#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
@@ -36,6 +36,7 @@ char map1[32][128] =
 		"###############################################################################################################################"
 };
 
+
 void gameInitGame(struct Game* game)
 {
 	game->gameOver = 0;
@@ -47,7 +48,16 @@ void gameInitGame(struct Game* game)
 		}
 	}
 	game->snake = malloc(sizeof(struct Snake));
+	for(int i = 0; i < FOOD_COUNT - 1; i++)
+	{
+		game->food[i] = malloc(sizeof(struct Food));
+	}
 	snakeInit(game->snake);
+	for(int i = 0; i < FOOD_COUNT - 1; i++)
+	{
+	    foodInit(game->food[i]);
+	}
+
 }
 
 void gameRenderBuffer(struct Game* game)
@@ -91,9 +101,6 @@ void gameCheckInput(struct Game* game)
 				if(game->snake->snakeDirection != Left)
 				game->snake->snakeDirection = Right;
 				break;
-			case 'g':
-				game->snake->snakeLength += 1;
-				break;
 			case 'q':
 				game->gameOver = 1;
 			default:
@@ -105,17 +112,25 @@ void gameCheckInput(struct Game* game)
 void gameUpdateGame(struct Game* game)
 {
 	snakeUpdate(game->snake, game);
+	for(int i = 0; i < FOOD_COUNT - 1; i++)
+	{
+		foodUpdate(game->food[i], game->snake, game);
+	}
 }
 
 void gameDraw(struct Game* game)
 {
+	for(int i = 0; i < FOOD_COUNT - 1; i++)
+	{
+		foodDraw(game->food[i], game);
+	}
 	snakeDraw(game->snake, game);
 	gameRenderBuffer(game);
 }
 
 void gameMainGameLoop(struct Game* game)
 {
-    	gameCheckInput(game);
+    gameCheckInput(game);
 	gameUpdateGame(game);
 	gameDraw(game);
 }
@@ -123,4 +138,8 @@ void gameMainGameLoop(struct Game* game)
 void gameCleanUp(struct Game* game)
 {
 	free(game->snake);
+	for(int i = 0; i < FOOD_COUNT - 1; i++)
+	{
+		free(game->food[i]);
+	}
 }

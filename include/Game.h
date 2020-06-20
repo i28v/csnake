@@ -3,10 +3,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 #include "Snake.h"
+#include "Food.h"
 #include "Input.h"
 
-
+#define FOOD_COUNT 16
 
 extern char map1[32][128];
 
@@ -16,6 +19,7 @@ struct Game
 	int score;
     int gameOver;
 	struct Snake* snake;
+	struct Food* food[FOOD_COUNT];
 };
 
 void gameInitGame(struct Game* game);
