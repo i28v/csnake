@@ -39,6 +39,7 @@ char map1[32][128] =
 void gameInitGame(struct Game* game)
 {
 	game->gameOver = 0;
+	game->score = 8;
 	for(int j = 0; j <= 31; j++)
 	{
 	    for(int i = 0; i <= 127; i++)
@@ -75,6 +76,7 @@ void gameRenderBuffer(struct Game* game)
 		printf("\n");
 		printf(" ");
 	}
+	printf("\n\n Score: %i", game->score);
 }
 
 void gameCheckInput(struct Game* game)
