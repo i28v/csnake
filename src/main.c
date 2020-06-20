@@ -5,7 +5,7 @@
 int main(void)
 {
 	
-    system("clear");
+    	system("clear");
 	printf("\e[?25l");
 	enableRawMode();
 	struct Game game;
