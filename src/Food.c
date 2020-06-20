@@ -12,10 +12,10 @@ void foodUpdate(struct Food* food, struct Snake* snake, struct Game* game)
 {
 	if(snake->bodyXPos[0] == food->xpos && snake->bodyYPos[0] == food->ypos)
 	{
-			snake->snakeLength++;
-			game->score += food->value;
-			food->xpos = rand() % 125 + 1;
-			food->ypos = rand() % 30 + 1;
+		snake->snakeLength++;
+		game->score += food->value;
+		food->xpos = rand() % 125 + 1;
+		food->ypos = rand() % 30 + 1;
 	}
 }
 
