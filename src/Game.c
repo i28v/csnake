@@ -3,7 +3,7 @@
 char map1[32][128] = 
 {
 		"###############################################################################################################################",
-	    "#                                                                                                                             #",
+	        "#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
@@ -112,7 +112,7 @@ void gameDraw(struct Game* game)
 
 void gameMainGameLoop(struct Game* game)
 {
-    gameCheckInput(game);
+        gameCheckInput(game);
 	gameUpdateGame(game);
 	gameDraw(game);
 }
