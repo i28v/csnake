@@ -32,7 +32,7 @@ void snakeDraw(struct Snake* snake, struct Game* game)
 		}
 		else 
 		{
-			game->mapBuffer[snake->bodyYPos[i]][snake->bodyXPos[i]] = (char)'*'; 
+			game->mapBuffer[snake->bodyYPos[i]][snake->bodyXPos[i]] = '*'; 
 		}
 	}
 }
