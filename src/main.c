@@ -15,10 +15,11 @@ int main(void)
 	{
 		gameMainGameLoop(&game);
 		usleep(83 * 1000);
-	}	
+	}
 	gameCleanUp(&game); // delete the game's variables from memory
 	disableRawMode(); // reenable pressed keys showing up on the screen
   	tcflush(0, TCIFLUSH); // prevent pressed keys from playing the game from showing up when the bash terminal opens
 	printf("\e[?25h"); // show the cursor
+	printf("\n\n");
 	return 0; // exit the program
 }
