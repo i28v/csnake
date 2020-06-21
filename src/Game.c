@@ -3,7 +3,7 @@
 char map1[32][128] = 
 {
 		"###############################################################################################################################",
-	        "#                                                                                                                             #",
+	    "#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
 		"#                                                                                                                             #",
@@ -35,6 +35,7 @@ char map1[32][128] =
 		"#                                                                                                                             #",
 		"###############################################################################################################################"
 };
+
 
 void gameInitGame(struct Game* game)
 {
@@ -74,37 +75,37 @@ void gameRenderBuffer(struct Game* game)
 			printf("#");
 		}
 		printf("\n");
-		printf(" ");  
+		printf(" ");
 	}
 	printf("\n\n Score: %i", game->score);
 }
 
 void gameCheckInput(struct Game* game)
 {
-    	if(kbhit())
-    	{
-	   	char ch = getch();
+   	if(kbhit())
+    {
+	    char ch = getch();
 		if(ch == '\033')
 		{
-			getch();
+	    	getch();
 			char ch2 = getch();
 			switch(ch2)
 			{
-			       	case 'A':
-                    			if(game->snake->snakeDirection != Down)
-                        			game->snake->snakeDirection = Up; 
-                   			 break;
-                		case 'B':
-                    			if(game->snake->snakeDirection != Up) 
-                        			game->snake->snakeDirection = Down;
-                    			break;
-                		case 'D':
-                   		        if(game->snake->snakeDirection != Right)
-                        			game->snake->snakeDirection = Left;
-                    			break;
-                		case 'C':
-                    			if(game->snake->snakeDirection != Left)
-                        			game->snake->snakeDirection = Right;
+			    case 'A':
+                	if(game->snake->snakeDirection != Down)
+                    	game->snake->snakeDirection = Up; 
+                   	break;
+                case 'B':
+                	if(game->snake->snakeDirection != Up) 
+                    	game->snake->snakeDirection = Down;
+                    break;
+                case 'D':
+                	if(game->snake->snakeDirection != Right)
+                    	game->snake->snakeDirection = Left;
+                    break;
+                case 'C':
+                	if(game->snake->snakeDirection != Left)
+                    	game->snake->snakeDirection = Right;
 				default:
 					break;
 			}
@@ -115,7 +116,7 @@ void gameCheckInput(struct Game* game)
 		}
 	}	
 }
-	
+
 void gameUpdateGame(struct Game* game)
 {
 	snakeUpdate(game->snake, game);
@@ -137,7 +138,7 @@ void gameDraw(struct Game* game)
 
 void gameMainGameLoop(struct Game* game)
 {
-    	gameCheckInput(game);
+    gameCheckInput(game);
 	gameUpdateGame(game);
 	gameDraw(game);
 }
