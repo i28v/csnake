@@ -81,35 +81,41 @@ void gameRenderBuffer(struct Game* game)
 
 void gameCheckInput(struct Game* game)
 {
-	if(kbhit())
-	{
-		char ch = getch();
-		switch(ch)
+    	if(kbhit())
+    	{
+	   	char ch = getch();
+		if(ch == '\033')
 		{
-			case 'w':
-				if(game->snake->snakeDirection != Down)
-				game->snake->snakeDirection = Up;
-				break;
-			case 's':
-				if(game->snake->snakeDirection != Up)
-				game->snake->snakeDirection = Down;
-				break;
-			case 'a':
-				if(game->snake->snakeDirection != Right)
-				game->snake->snakeDirection = Left;
-				break;
-			case 'd':
-				if(game->snake->snakeDirection != Left)
-				game->snake->snakeDirection = Right;
-				break;
-			case 'q':
-				game->gameOver = 1;
-			default:
-				break;
+			getch();
+			char ch2 = getch();
+			switch(ch2)
+			{
+			       	case 'A':
+                    			if(game->snake->snakeDirection != Down)
+                        			game->snake->snakeDirection = Up; 
+                   			 break;
+                		case 'B':
+                    			if(game->snake->snakeDirection != Up) 
+                        			game->snake->snakeDirection = Down;
+                    			break;
+                		case 'D':
+                   		        if(game->snake->snakeDirection != Right)
+                        			game->snake->snakeDirection = Left;
+                    			break;
+                		case 'C':
+                    			if(game->snake->snakeDirection != Left)
+                        			game->snake->snakeDirection = Right;
+				default:
+					break;
+			}
 		}
-	}
+		else if(ch == 'q')
+		{
+			game->gameOver = 1;
+		}
+	}	
 }
-
+	
 void gameUpdateGame(struct Game* game)
 {
 	snakeUpdate(game->snake, game);
