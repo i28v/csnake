@@ -86,7 +86,7 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
             {
                 game->gameOver = 1;
                 return;
-            }
+            } 
             else
             {
                 snake->bodyXPos[0]++;
