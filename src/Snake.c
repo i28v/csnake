@@ -45,7 +45,6 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
         snake->bodyXPos[i] = snake->bodyXPos[i - 1];
         snake->bodyYPos[i] = snake->bodyYPos[i - 1];
     }
-
     switch (snake->snakeDirection)
     {
         case Up:
