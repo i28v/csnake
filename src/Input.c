@@ -25,6 +25,6 @@ int kbhit(void)
 
 int getch(void)
 {
-    char ch = getchar();   
+    int ch = getchar();   
     return ch;
 }
