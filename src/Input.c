@@ -25,14 +25,6 @@ int kbhit(void)
 
 int getch(void)
 {
-    static int ch = -1, fd = 0;
-    struct termios neu, alt;
-    fd = fileno(stdin);
-    tcgetattr(fd, &alt);
-    neu = alt;
-    neu.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(fd, TCSANOW, &neu);
-    ch = getchar();
-    tcsetattr(fd, TCSANOW, &alt);
+    char ch = getchar();   
     return ch;
 }
