@@ -58,8 +58,6 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
             {
                 snake->bodyYPos[0]--;
             }
-            // game->mapBuffer[snake->bodyYPos[snake->snakeLength]+1][snake->bodyXPos[snake->snakeLength]]
-            // = ' ';
             break;
         case Down:
             if (game->mapBuffer[snake->bodyYPos[0] + 1][snake->bodyXPos[0]] == '#')
@@ -71,8 +69,6 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
             {
                 snake->bodyYPos[0]++;
             }
-            // game->mapBuffer[snake->bodyYPos[snake->snakeLength-1]][snake->bodyXPos[snake->snakeLength]]
-            // = ' ';
             break;
         case Left:
             if (game->mapBuffer[snake->bodyYPos[0]][snake->bodyXPos[0] - 1] == '#')
@@ -84,8 +80,6 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
             {
                 snake->bodyXPos[0]--;
             }
-            // game->mapBuffer[snake->bodyYPos[snake->snakeLength]][snake->bodyXPos[snake->snakeLength]+1]
-            // = ' ';
             break;
         case Right:
             if (game->mapBuffer[snake->bodyYPos[0]][snake->bodyXPos[0] + 1] == '#')
@@ -97,8 +91,6 @@ void snakeUpdate(struct Snake* snake, struct Game* game)
             {
                 snake->bodyXPos[0]++;
             }
-            // game->mapBuffer[snake->bodyYPos[snake->snakeLength]][snake->bodyXPos[snake->snakeLength]-1]
-            // = ' ';
             break;
         default:
             break;
