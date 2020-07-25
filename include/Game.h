@@ -8,6 +8,7 @@
 #include "Snake.h"
 #include "Food.h"
 #include "Input.h"
+#include "MapData.h"
 
 #define FOOD_COUNT 16
 
