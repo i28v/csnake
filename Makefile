@@ -4,7 +4,7 @@ obj = $(src:.c=.o)
 
 LDFLAGS = -Wall -O2 -I./include/
 csnake: $(obj)
-	$(CXX) $(LDFLAGS) -s -o $@ $^
+	$(CC) $(LDFLAGS) -s -o $@ $^
 
 %.o: %.c
 	$(CC) $(LDFLAGS) -c $< -o $@
