@@ -1,8 +1,9 @@
 CC = gcc
 src = $(wildcard src/*.c)
-obj = $(src:.c=.o)
+obj = $(src:%.c=obj/%.o)
 
-LDFLAGS = -Wall -O2 -I./include/
+LDFLAGS =-s
+CFLAGS=-Wall -O2
 csnake: $(obj)
 	$(CC) $(LDFLAGS) -s -o $@ $^
 
