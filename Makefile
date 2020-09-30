@@ -10,5 +10,6 @@ csnake: $(obj)
 %.o: %.c
 	$(CC) $(C) -c $< -o $@
 
+.PHONY: clean
 clean: 
 	rm -f $(obj) csnake
